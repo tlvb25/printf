@@ -22,9 +22,9 @@ void print_all(const char *format, ...)
 	const char *inc;
 	int i = 0;
 
-	for (inc = format; *inc; inc++)
+	/*for (inc = format; *inc; inc++)
 	{
-		i++;
-		if (*inc != '%')
+		i++;*/
+		if (format)
 		{
-			
+			for (i = 0; i 
