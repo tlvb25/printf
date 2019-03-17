@@ -19,34 +19,33 @@ int _putchar(char c)
 
 
 /**
- * prt_char - prints char from va_list
+ * print_char - prints char from va_list
  * @list: list of ceis var given
  * Return: nothing
  */
-int prt_char(va_list ap)
+int print_char(va_list list)
 {
-	_putchar(va_arg(ap, int));
-	return (1);
+	return (_putchar(va_arg(list, int)));
 }
 
 
 
 /**
- * _prt_int - writes the character c to stdout
+ * _print_int - writes the character c to stdout
  * @ap: The character to print
  *
  * Return: On success 1.
  * On error, -1 is returned, and errno is set appropriately.
  */
-int prt_int(va_list ap)
+int print_int(va_list list)
 {
 	int i, p;
 
-	if ((va_arg(ap, int)) < 0)
+	if ((va_arg(list, int)) < 0)
 		_putchar('-');
 	for (p = 0, i = 1000000000; i > 0; i /= 10)
 	{
-		int d = ((va_arg(ap, int)) / i) % 10;
+		int d = ((va_arg(list, int)) / i) % 10;
 
 		d = d < 0 ? -d : d;
 		if (d || p || i == 1)
@@ -61,21 +60,41 @@ int prt_int(va_list ap)
 
 
 /**
- * prt_string - function that prints a string
+ * print_string - function that prints a string
  * @ap: argument paraments
  *
  * Return: string
  */
-int prt_string(va_list ap)
+int print_string(va_list list)
 {
 	char *s;
 	int i;
 
-	s = va_arg(ap, char *);
+	s = va_arg(list, char *);
 
 	for (i = 0; s[i]; i++)
 	{
 		_putchar(s[i]);
 	}
 	return (i);
+}
+
+void print_number(int n)
+{
+	int i, p;
+
+	if (n < 0)
+		_putchar('-');
+	for (p = 0, i = 1000000000; i > 0; i /= 10)
+	{
+		int d = (n / i) % 10;
+
+		d = d < 0 ? -d : d;
+		if (d || p || i == 1)
+		{
+			_putchar(d + '0');
+			p++;
+		}
+
+	}
 }
