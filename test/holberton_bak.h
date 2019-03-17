@@ -14,13 +14,13 @@
 typedef struct var
 {
 	char *s;
-	int (*f)(va_list list);
+	void (*f)(va_list list);
 } var_struct;
 
 
 int _putchar(char c);
 int print_number(int n);
-int print_perc(va_list list);
+int print_perc(void);
 int print_char(va_list list);
 int print_int(va_list list);
 int print_string(va_list list);

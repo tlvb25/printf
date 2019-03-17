@@ -1,21 +1,17 @@
 #include "holberton.h"
-#include <stdlib.h>
-#include <string.h>
-#include <stdio.h>
-#include <stdarg.h>
+
+
 
 /**
  * _putchar - writes the character c to stdout
  * @c: The character to print
  *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
+ * Return: Integer
  */
 int _putchar(char c)
 {
 	return (write(1, &c, 1));
 }
-
 
 
 /**
@@ -28,42 +24,39 @@ int print_char(va_list list)
 	return (_putchar(va_arg(list, int)));
 }
 
-
-
 /**
- * _print_int - writes the character c to stdout
- * @ap: The character to print
+ * print_perc - function print "%" sign
+ * @void:
  *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
+ * Return - returns the printed "%"
  */
-int print_int(va_list list)
+int print_perc(va_list list)
 {
-	int i, p;
-
-	if ((va_arg(list, int)) < 0)
-		_putchar('-');
-	for (p = 0, i = 1000000000; i > 0; i /= 10)
-	{
-		int d = ((va_arg(list, int)) / i) % 10;
-
-		d = d < 0 ? -d : d;
-		if (d || p || i == 1)
-		{
-			_putchar(d + '0');
-			p++;
-		}
-
-	}
+	(void) list;
+	return (_putchar('%'));
 }
 
 
 
 /**
- * print_string - function that prints a string
- * @ap: argument paraments
+ * _print_int - writes the character c to stdout
+ * @list: The character to print
  *
- * Return: string
+ * Return: integer
+ */
+int print_int(va_list list)
+{
+	int i = va_arg(list, int);
+
+	return (print_number(i));
+}
+
+
+/**
+ * print_string - function that prints a string
+ * @list: argument paraments
+ *
+ * Return: integer
  */
 int print_string(va_list list)
 {
@@ -79,12 +72,20 @@ int print_string(va_list list)
 	return (i);
 }
 
-void print_number(int n)
+
+
+/**
+ * print_number - prints an integer
+ * @n: the integer passed into function
+ *
+ * Return: the printed number (sum)
+ */
+int print_number(int n)
 {
-	int i, p;
+	int i, p, sum = 0;
 
 	if (n < 0)
-		_putchar('-');
+		sum += _putchar('-');
 	for (p = 0, i = 1000000000; i > 0; i /= 10)
 	{
 		int d = (n / i) % 10;
@@ -92,9 +93,10 @@ void print_number(int n)
 		d = d < 0 ? -d : d;
 		if (d || p || i == 1)
 		{
-			_putchar(d + '0');
+			sum += _putchar(d + '0');
 			p++;
 		}
 
 	}
+	return (sum);
 }

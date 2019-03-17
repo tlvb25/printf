@@ -21,7 +21,7 @@ int _printf(const char *format, ...)
 		{"%", print_perc},
 		{"c", print_char},
 		{"i", print_int},
-		{"f", print_float},
+		{"fl", print_float},
 		{"s", print_string},
 		{NULL, NULL}};
 
@@ -51,7 +51,6 @@ int _printf(const char *format, ...)
                                 b++;
                         }
                         _putchar(format[a]);
-
                         b++;
                 }
                 a++;
