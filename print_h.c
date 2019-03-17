@@ -4,17 +4,58 @@
 #include <stdio.h>
 #include <stdarg.h>
 
+/**
+ * _putchar - writes the character c to stdout
+ * @c: The character to print
+ *
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
+ */
+int _putchar(char c)
+{
+	return (write(1, &c, 1));
+}
+
 
 
 /**
- * print_char - prints char from va_list
+ * prt_char - prints char from va_list
  * @list: list of ceis var given
  * Return: nothing
  */
-
-void print_char(va_list list)
+int prt_char(va_list ap)
 {
-	printf("%c", va_arg(list, int));
+	_putchar(va_arg(ap, int));
+	return (1);
+}
+
+
+
+/**
+ * _prt_int - writes the character c to stdout
+ * @ap: The character to print
+ *
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
+ */
+int prt_int(va_list ap)
+{
+	int i, p;
+
+	if ((va_arg(ap, int)) < 0)
+		_putchar('-');
+	for (p = 0, i = 1000000000; i > 0; i /= 10)
+	{
+		int d = ((va_arg(ap, int)) / i) % 10;
+
+		d = d < 0 ? -d : d;
+		if (d || p || i == 1)
+		{
+			_putchar(d + '0');
+			p++;
+		}
+
+	}
 }
 
 
@@ -25,46 +66,16 @@ void print_char(va_list list)
  *
  * Return: string
  */
-
-void prt_string(va_list ap)
+int prt_string(va_list ap)
 {
 	char *s;
+	int i;
 
 	s = va_arg(ap, char *);
 
-	if (!s)
+	for (i = 0; s[i]; i++)
 	{
-		s = "(nil)";
+		_putchar(s[i]);
 	}
-	printf("%s", s);
-}
-
-
-
-/**
- * print_int - prints int for function
- * @list: accessing list for i var
- * Return: nothing
- */
-
-void print_int(va_list list)
-{
-	int i;
-	i = va_arg(list, int);
-	printf("%i", i);
-}
-
-
-
-/**
- * print_float - function prints floats by struct
- * @list: accessing list for flaot var
- * Return: nothing
- */
-
-void print_float(va_list list)
-{
-	float fl;
-	fl = va_arg(list, double);
-	printf("%f", fl);
+	return (i);
 }
