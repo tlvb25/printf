@@ -1,32 +1,47 @@
 #include "holberton.h"
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
+#include <stdarg.h>
 
-void print_all(const char * const format, ...)
+
+
+/**
+ * print_char - prints char from va_list
+ * @list: list of ceis var given
+ * Return: nothing
+ */
+
+
+int _printf(const char *format, ...)
 {
-	va_list ap;
+	va_list list;
 
-	int a = 0, b = 0;
-	char *sep = "";
-	op_t ops[] = {
-		{"c", prt_char},
-		{"d", prt_dec},
-		{"i", prt_int},
-		{"f", prt_float},
-		{"s", prt_string},
-		{"%", prt_perc},
+	var_struct array[] = {
+		{"c", print_char},
+		{"i", print_int},
+		{"f", print_float},
+		{"s", print_string},
 		{NULL, NULL}};
 
-	va_start(ap, format);
+	int a = 0;
+	int b = 0;
+	char *sep = "";
+
+	va_start(list, format);
+	/*const char *inc;*/
 
 	while (format && format[a])
 	{
-		while (ops[b].s)
+		while (array[b].s)
 		{
-			if (format[a] == *ops[b].s)
+			if (format[a] == *array[b].s)
 			{
 				printf("%s", sep);
-				ops[b].f(ap);
+				array[b].f(list);
 				sep = ", ";
 			}
+			if (format
 			b++;
 		}
 		a++;
@@ -34,5 +49,5 @@ void print_all(const char * const format, ...)
 
 	}
 	printf("\n");
-	va_end(ap);
-}
+	va_end(list);
+	}
