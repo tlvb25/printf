@@ -30,9 +30,8 @@ int print_char(va_list list)
  *
  * Return - returns the printed "%"
  */
-int print_perc(va_list list)
+int print_perc()
 {
-	(void) list;
 	return (_putchar('%'));
 }
 
