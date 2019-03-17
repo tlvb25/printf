@@ -10,11 +10,11 @@
  * @f: the function to parse cases to determine how to print
  */
 
-typedef struct op
+typedef struct var
 {
 	char *s;
 	void (*f)(va_list list);
-} op_t;
+} var_struct;
 
 
 int _putchar(char c);
@@ -23,7 +23,7 @@ void print_numbers(const char *separator, const unsigned int n, ...);
 void print_strings(const char *separator, const unsigned int n, ...);
 void print_all(const char * const format, ...);
 int _printf(const char *format, ...);
-char *_strdup(char *str);
+/*char *_strdup(char *str);
 int _atoi(char *s);
 char *cap_string(char *);
 char *string_toupper(char *);
@@ -63,5 +63,5 @@ void jack_bauer(void);
 int add(int, int);
 void print_to_98(int n);
 int _isupper(int c);
-int _isdigit(int c);
+int _isdigit(int c);*/
 #endif /* _HOLBERTON_H */
