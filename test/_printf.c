@@ -18,6 +18,7 @@ int _printf(const char *format, ...)
 	va_list list;
 
 	var_struct array[] = {
+		{"%", print_perc},
 		{"c", print_char},
 		{"i", print_int},
 		{"f", print_float},
@@ -26,10 +27,8 @@ int _printf(const char *format, ...)
 
 	int a = 0;
 	int b = 0;
-	char *sep = "";
 
 	va_start(list, format);
-	/*const char *inc;*/
 
 	while (format && format[a])
 	{
@@ -52,7 +51,7 @@ int _printf(const char *format, ...)
                                 b++;
                         }
                         _putchar(format[a]);
-                        /*if (format[a] == )*/
+
                         b++;
                 }
                 a++;
