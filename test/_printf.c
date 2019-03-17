@@ -18,6 +18,7 @@ int _printf(const char *format, ...)
 	va_list list;
 
 	var_struct array[] = {
+		{"%", print_perc},
 		{"c", print_char},
 		{"i", print_int},
 		{"f", print_float},
@@ -26,10 +27,8 @@ int _printf(const char *format, ...)
 
 	int a = 0;
 	int b = 0;
-	char *sep = "";
 
 	va_start(list, format);
-	/*const char *inc;*/
 
 	while (format && format[a])
 	{
@@ -41,14 +40,24 @@ int _printf(const char *format, ...)
 				array[b].f(list);
 				sep = ", ";
 			}
-			if (format
-			b++;
-		}
-		a++;
-		b = 0;
+			if (format [b + 1] == '\0' || format [b + 1] == ' ')
+                        {
+                                va_end(list);
+                                return (0);
+                        }
+                        if (format [a + 1} == '%')
+                        {
+                                _putchar('%');
+                                b++;
+                        }
+                        _putchar(format[a]);
 
-	}
-	printf("\n");
-	va_end(list);
-	
+                        b++;
+                }
+                a++;
+                b = 0;
+
+        }
+        va_end(list);
+	return (0);
 }
