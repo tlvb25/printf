@@ -18,7 +18,6 @@ int _printf(const char *format, ...)
 	va_list list;
 
 	var_struct array[] = {
-		{"%", print_perc},
 		{"c", print_char},
 		{"i", print_int},
 		{"f", print_float},
