@@ -38,49 +38,31 @@ int print_perc(va_list list)
 
 
 
-/**
- * _print_int - writes the character c to stdout
- * @list: The character to print
- *
- * Return: integer
- */
 int print_int(va_list list)
 {
-	int i = va_arg(list, int);
+	int a = va_arg(list, int);
 
-	return (print_number(i));
+	return (print_int(a));
 }
 
 
-/**
- * print_string - function that prints a string
- * @list: argument paraments
- *
- * Return: integer
- */
 int print_string(va_list list)
 {
 	char *s;
-	int i;
+	int a = 0;
 
-	s = va_arg(list, char *);
+	s = va_arg(list, char*);
 
-	for (i = 0; s[i]; i++)
+	for (a = 0; s[a]; a++)
 	{
-		_putchar(s[i]);
+		_putchar(s[a]);
 	}
-	return (i);
+	return (a);
 }
 
 
 
-/**
- * print_number - prints an integer
- * @n: the integer passed into function
- *
- * Return: the printed number (sum)
- */
-int print_number(int n)
+int print_int(va_list list)
 {
 	int i, p, sum = 0;
 
