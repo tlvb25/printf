@@ -9,7 +9,7 @@
 /**
  * print_fun - function goes through array by struct and returns
  * appropriate value
- * @strings: 
+ * @strings:
  * Return: nothing
  */
 int print_fun(char strings)
@@ -40,10 +40,11 @@ int print_fun(char strings)
  * @format: pointer to var input
  * Return: nothing
  */
+int _printf(const char *format, ...)
 {
 	int a = 0;
-	increment = 0;
-	whole_string = 0;
+	int increment = 0;
+	int whole_string = 0;
 
 	va_list list;
 
