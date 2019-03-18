@@ -39,12 +39,12 @@ int _printf(const char *format, ...)
 				printf("%s", list);
 				array[b].f(list);
 			}
-			if (format [b + 1] == '\0' || format [b + 1] == ' ')
+			if (format [a + 1] == '\0' || format [a + 1] == ' ')
                         {
                                 va_end(list);
                                 return (0);
                         }
-                        if (format [a + 1} == '%')
+                        if (format [a + 1] == '%')
                         {
                                 _putchar('%');
                                 b++;
