@@ -69,8 +69,8 @@ int print_string(va_list list)
 
 
 /**
- * print_int - prints string from va_list
- * @list: list of ceis var given
+ * print_number - prints number from va_list
+ * @n: variable to be incremented through
  * Return: identified string
  */
 int print_number(int n)

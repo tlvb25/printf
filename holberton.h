@@ -9,6 +9,7 @@
 /**
  * struct var - struct for function parameters to print anything
  * @s: the string member of typedef struct var
+ * @var: struct name
  * @f: the function member of typedef struct var
  */
 typedef struct var

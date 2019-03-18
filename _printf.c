@@ -9,7 +9,7 @@
 /**
  * print_fun - function goes through array by struct and returns
  * appropriate value
- * @strings:
+ * @strings: comparing to array
  * Return: nothing
  */
 int print_fun(char strings)
