@@ -5,11 +5,10 @@
 #include <stdarg.h>
 
 
-
 /**
  * print_fun - function goes through array by struct and returns
  * appropriate value
- * @strings: comparing to array
+ * @strings: is it a theory or reality?
  * Return: nothing
  */
 int print_fun(char strings)
@@ -32,7 +31,6 @@ int print_fun(char strings)
 	}
 	return (0);
 }
-
 
 
 /**
