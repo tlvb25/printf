@@ -7,27 +7,39 @@
 
 
 /**
- * _printf - prints string from input
- * @format: pointer to var input
+ * print_fun - function goes through array by struct and returns
+ * appropriate value
+ * @strings: 
  * Return: nothing
  */
-
 int print_fun(char strings)
 {
 	char char_array[] = {'c', 'i', 's', 'd'};
 	int a = 0;
 
 	if (strings == '%')
+	{
 		return (1);
+	}
+
 	while (a < 4)
 	{
 		if (strings == char_array[a])
+		{
 			return (1);
+		}
 		a++;
 	}
 	return (0);
 }
 
+
+
+/**
+ * _printf - prints string from input
+ * @format: pointer to var input
+ * Return: nothing
+ */
 {
 	int a = 0;
 	increment = 0;
