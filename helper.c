@@ -1,43 +1,21 @@
 #include "holberton.h"
 
-
-
-/**
- * _putchar - writes the character c to stdout
- * @c: The character to print
- *
- * Return: Integer
- */
-int _putchar(char c)
-{
-	return (write(1, &c, 1));
-}
-
-
 /**
  * print_char - prints char from va_list
  * @list: list of ceis var given
- * Return: nothing
+ * Return: identified char
  */
 int print_char(va_list list)
 {
 	return (_putchar(va_arg(list, int)));
 }
 
+
 /**
- * print_perc - function print "%" sign
- * @void:
- *
- * Return - returns the printed "%"
+ * print_int - prints ints from va_list
+ * @list: list of ceis var given
+ * Return: identified int
  */
-int print_perc(va_list list)
-{
-	(void) list;
-	return (_putchar('%'));
-}
-
-
-
 int print_int(va_list list)
 {
 	int a = va_arg(list, int);
@@ -46,6 +24,11 @@ int print_int(va_list list)
 }
 
 
+/**
+ * print_string - prints string from va_list
+ * @list: list of ceis var given
+ * Return: identified string
+ */
 int print_string(va_list list)
 {
 	char *s;
@@ -53,6 +36,15 @@ int print_string(va_list list)
 
 	s = va_arg(list, char*);
 
+	if (s == NULL)
+	{
+		s = "(nill)";
+		if (s[a] == '\0')
+		{
+			_putchar(s[a]);
+			a++;
+		}
+	}
 	for (a = 0; s[a]; a++)
 	{
 		_putchar(s[a]);
