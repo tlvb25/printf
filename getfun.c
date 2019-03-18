@@ -13,16 +13,16 @@ int (*getfun(char var))(va_list list)
 		{'i', print_int},
 		{'s', print_string},
 		{'d', print_int},
-		{NULL, NULL}
+		{'\0', NULL}
 	};
 
 	int c = 0;
 
-	while (c < 4)
+	while (array[c].var)
 	{
-		if (getfun[c].var == var)
+		if (array[c].var == var)
 		{
-			return (getfun[c].f);
+			return (array[c].f);
 		}
 		c++;
 	}
