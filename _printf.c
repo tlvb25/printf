@@ -38,7 +38,7 @@ int _printf(const char *format, ...)
 			{
 				printf("%s", sep);
 				array[b].f(list);
-				sep = ", ";
+			
 			}
 			if (format [b + 1] == '\0' || format [b + 1] == ' ')
                         {
