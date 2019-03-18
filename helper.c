@@ -20,7 +20,7 @@ int print_int(va_list list)
 {
 	int a = va_arg(list, int);
 
-	return (print_int(a));
+	return (print_number(a));
 }
 
 
@@ -54,7 +54,7 @@ int print_string(va_list list)
 
 
 
-int print_int(va_list list)
+int print_number(int n)
 {
 	int i, p, sum = 0;
 
