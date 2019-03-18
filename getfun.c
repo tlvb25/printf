@@ -5,7 +5,6 @@
  * @
  * Return: nothing
  */
-
 int (*getfun(char var))(va_list list)
 {
 	var_struct array[] = {
