@@ -1,0 +1,14 @@
+.TH _PRINTF 3
+.SH NAME
+_printf \- format and print data from input
+.SH SYNOPSIS
+.B _printf
+[\fB\-n\fR \fIBITS\fR]
+[\fB\-\-bits\fR \fIBITS\fR]
+.IR file ...
+
+.B _printf
+[\fB\-\-help\fR]
+
+.B _printf
+[\fB\-\-version\fR]
