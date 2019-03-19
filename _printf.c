@@ -54,10 +54,6 @@ int _printf(const char *format, ...)
 	}
 	while (format[a])
 	{
-		if (format[a] == '%' && !format[a + 1])
-		{
-			return (-1);
-		}
 		if (format[a] == '%' && print_fun(format[a + 1]))
 		{
 			a++;
