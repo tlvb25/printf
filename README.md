@@ -1,46 +1,44 @@
-# 0x10. C - printf
-
-## Description
-This was our 1st C-Programming Milestone Project:
-
-* We learned how to construct our own version of Printf (_Printf)
-* We learned how to use GitHub with a partner, as is done in the industry.
-* We learned how to construct a man page for our custom (_Printf) function.
-
+# _printf
+##### Recreation of the function [`printf`](http://clc-wiki.net/wiki/C_standard_library:stdio.h:printf) from the C Standard Library
+---
+### Prototype
+#### `int _printf(const char *format, ...)` Returns the number of characters
+printed (int).
+---
+### Usage
+- Includes `holberton.h`
+- Calls the function: `_printf` passed in a string with optional arguments
+- Use format specifiers for desired output
+- Function returns `-1` upon error and `(null)` if a string argument is `NULL`
+### Format Specifiers
+Function name | Description | Format Specifier
+--- | --- | ---
+`print_c` | Prints a character | `%c`
+`print_s` | Prints a 0000000 | `%d`
+`print_p` | Prints a % | `%%`
+`print_d` | Prints  | `%d` & `%i`
+### Example Usage
+- `_printf("Hello, world\n")` *prints "Hello, world" followed by a new line*
+- `_printf("Hello %s", "Holberton")` *prints "Hello, Holberton"*
+- `_printf("%d\n", 777)` *printf the decimal number, 777 followed by a new line*
+- `_printf("%c", 'v')` *prints the character 'v'*
+### Files
+File Name | Description
+--- | ---
+`_printf.c` | Produces an output according to specifiers 
+`helper_function.c` | File containing specifier functions
+`holberton.h` | Header file with function prototypes and struct
+`_putchar.c` | Function to write a char to standard output
 ---
 
-### [0. I'm not going anywhere. You can print that wherever you want to. I'm here and I'm a Spur for life]
-* Write a function that produces output according to a format.
-* Returns: the number of characters printed (excluding the null byte used to end output to strings)
-* write output to stdout, the standard output stream
-* format is a character string. The format string is composed of zero or more directives. See man 3 printf for more detail. You need to handle the following conversion specifiers: 
+### About
+This project was created by
+* **Nick O'Keefe** - [GitHub - nokeefe](https://github.com/nokeefe) | [LinkedIn](https://www.linkedin.com/in/nbokeefe/) at [Holberton
+School](http://holbertonschool.com).
+* **Tywan Brooks** - [GitHub - tlvb25](https://github.com/tlvb25) | [LinkedIn](https://www.linkedin.com/in/tywan-brooks-a3b78716/) at [Holberton
+School](http://holbertonschool.com).
 
-* c
-* s
-* %
+All files were created and compiled on `Ubuntu 14.04.4 LTS` using `GCC 4.8.4` with
+the following flags:
 
-
-### [1. Education is when you read the fine print. Experience is what you get if you don't]
-* Handle the following conversion specifiers: 
-
-* d
-* i
-
-
-
-### [2. Just because it's in print doesn't mean it's the gospel]
-* Create a man page for your function.
-
-- File: man_3_printf
-
-
-### [3. With a face like mine, I do better in print]
-* Handle the following custom conversion specifiers:
-- b: the unsigned int argument is converted to binary
-
-
----
-
-## Author
-* **Nick O'Keefe** - [GitHub - nokeefe](https://github.com/nokeefe) | [LinkedIn](https://www.linkedin.com/in/nbokeefe/)
-* **Tywan Brooks** - [GitHub - tlvb25](https://github.com/tlvb25) | [LinkedIn](https://www.linkedin.com/in/tywan-brooks-a3b78716/)
+`-Wall -Werror -Wextra -Wno-format -pedantic`.
