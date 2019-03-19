@@ -13,6 +13,7 @@ int (*getfun(char var))(va_list list)
 		{'i', print_int},
 		{'s', print_string},
 		{'d', print_int},
+		{'u', print_unsigned},
 		{'\0', NULL}
 	};
 

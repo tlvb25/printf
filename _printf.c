@@ -49,7 +49,7 @@ int _printf(const char *format, ...)
 
 	va_start(list, format);
 
-	if (format == NULL)
+	if (!format || (format[0] == '%' && !format[1]))
 	{
 		return (-1);
 	}
