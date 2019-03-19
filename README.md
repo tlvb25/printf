@@ -33,8 +33,10 @@ File Name | Description
 
 ### About
 This project was created by
-* **Nick O'Keefe** - [GitHub - nokeefe](https://github.com/nokeefe) | [LinkedIn](https://www.linkedin.com/in/nbokeefe/)
-* **Tywan Brooks** - [GitHub - tlvb25](https://github.com/tlvb25) | [LinkedIn](https://www.linkedin.com/in/tywan-brooks-a3b78716/)
+* **Nick O'Keefe** - [GitHub - nokeefe](https://github.com/nokeefe) | [LinkedIn](https://www.linkedin.com/in/nbokeefe/) at [Holberton
+School](http://holbertonschool.com).
+* **Tywan Brooks** - [GitHub - tlvb25](https://github.com/tlvb25) | [LinkedIn](https://www.linkedin.com/in/tywan-brooks-a3b78716/) at [Holberton
+School](http://holbertonschool.com).
 
 All files were created and compiled on `Ubuntu 14.04.4 LTS` using `GCC 4.8.4` with
 the following flags:
