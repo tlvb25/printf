@@ -4,7 +4,7 @@
 This was our 1st C-Programming Milestone Project:
 
 * We learned how to construct our own version of Printf (_Printf)
-* We learned how to use GitHub with a partner
+* We learned how to use GitHub with a partner, as is done in the industry.
 * We learned how to construct a man page for our custom (_Printf) function.
 
 ---
