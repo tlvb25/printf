@@ -29,3 +29,20 @@ int (*getfun(char var))(va_list list)
 	}
 	return (NULL);
 }
+
+
+/**
+ * print_unsigned - prints unsigned numbers
+ * @list: parameter argument
+ *
+ * Return: resulting digits
+ */
+int print_unsigned(va_list list)
+{
+	unsigned int num;
+	int results;
+
+	num = va_arg(list, unsigned int);
+	results = print_number(num);
+	return (results);
+}
