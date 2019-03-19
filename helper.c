@@ -17,8 +17,8 @@ int _putchar(char c)
 
 /**
  * print_char - prints char from va_list
- * @list: list of ceis var given
- * Return: identified char
+ * @list: argument list
+ * Return: resulting char
  */
 int print_char(va_list list)
 {
@@ -28,8 +28,8 @@ int print_char(va_list list)
 
 /**
  * print_int - prints ints from va_list
- * @list: list of ceis var given
- * Return: identified int
+ * @list: argument list
+ * Return: resulting int
  */
 int print_int(va_list list)
 {
@@ -41,8 +41,8 @@ int print_int(va_list list)
 
 /**
  * print_string - prints string from va_list
- * @list: list of ceis var given
- * Return: identified string
+ * @list: argument list
+ * Return: resulting string
  */
 int print_string(va_list list)
 {
@@ -72,7 +72,7 @@ int print_string(va_list list)
 /**
  * print_number - prints number from va_list
  * @n: variable to be incremented through
- * Return: identified string
+ * Return: resulting number
  */
 int print_number(int n)
 {
@@ -93,4 +93,21 @@ int print_number(int n)
 
 	}
 	return (sum);
+}
+
+
+/**
+* print_unsigned - prints unsigned numbers
+* @args: parameter argument
+*
+* Return: resulting digits
+*/
+int print_unsigned(va_list args)
+{
+	unsigned int num;
+	int results;
+
+	num = va_arg(args, unsigned int);
+	results = printNum(num);
+	return (results);
 }

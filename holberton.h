@@ -25,7 +25,7 @@ int print_perc(va_list list);
 int print_char(va_list list);
 int print_int(va_list list);
 int print_string(va_list list);
-int print_number(int n);
+int print_unsigned(va_list args);
 int sum_them_all(const unsigned int n, ...);
 void print_numbers(const char *separator, const unsigned int n, ...);
 void print_strings(const char *separator, const unsigned int n, ...);
