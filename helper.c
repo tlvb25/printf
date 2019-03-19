@@ -1,12 +1,11 @@
 #include "holberton.h"
 
-
-
 /**
  * _putchar - writes the character c to stdout
  * @c: The character to print
  *
- * Return: Integer
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
  */
 int _putchar(char c)
 {
@@ -14,71 +13,65 @@ int _putchar(char c)
 }
 
 
+
 /**
  * print_char - prints char from va_list
- * @list: list of ceis var given
- * Return: nothing
+ * @list: argument list
+ * Return: resulting char
  */
 int print_char(va_list list)
 {
 	return (_putchar(va_arg(list, int)));
 }
 
-/**
- * print_perc - function print "%" sign
- * @void:
- *
- * Return - returns the printed "%"
- */
-int print_perc(va_list list)
-{
-	(void) list;
-	return (_putchar('%'));
-}
-
-
 
 /**
- * _print_int - writes the character c to stdout
- * @list: The character to print
- *
- * Return: integer
+ * print_int - prints ints from va_list
+ * @list: argument list
+ * Return: resulting int
  */
 int print_int(va_list list)
 {
-	int i = va_arg(list, int);
+	int a = va_arg(list, int);
 
-	return (print_number(i));
+	return (print_number(a));
 }
 
 
 /**
- * print_string - function that prints a string
- * @list: argument paraments
- *
- * Return: integer
+ * print_string - prints string from va_list
+ * @list: argument list
+ * Return: resulting string
  */
 int print_string(va_list list)
 {
 	char *s;
-	int i;
+	int a = 0;
 
-	s = va_arg(list, char *);
+	s = va_arg(list, char*);
 
-	for (i = 0; s[i]; i++)
+	if (s == NULL)
 	{
-		_putchar(s[i]);
+		s = "(nill)";
+		if (s[a] == '\0')
+		{
+			_putchar(s[a]);
+			a++;
+		}
 	}
-	return (i);
+	for (a = 0; s[a]; a++)
+	{
+		_putchar(s[a]);
+	}
+	return (a);
 }
 
 
 
 /**
- * print_number - prints an integer
- * @n: the integer passed into function
- *
- * Return: the printed number (sum)
+ * print_number - prints number from va_list
+ * @n: variable to be incremented through
+ * Return: resulting number
  */
 int print_number(int n)
 {
@@ -99,4 +92,21 @@ int print_number(int n)
 
 	}
 	return (sum);
+}
+
+
+/**
+* print_unsigned - prints unsigned numbers
+* @args: parameter argument
+*
+* Return: resulting digits
+*/
+int print_unsigned(va_list args)
+{
+	unsigned int num;
+	int results;
+
+	num = va_arg(args, unsigned int);
+	results = printNum(num);
+	return (results);
 }

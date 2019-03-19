@@ -1,12 +1,11 @@
 # 0x10. C - printf
 
 ## Description
-What we will learn from this project:
+What we plan to be able to answer from this project:
 
-* How do we create a function that mimics printf?
-* How do we handle conversion specifiers in our function?
-* How do we create a man page for our printf function?
-* How can we properly document a function and explain its use?
+* What is printf?
+* How is the function made?
+* 
 
 ---
 
@@ -33,4 +32,4 @@ What we will learn from this project:
 
 ## Author
 * **Nick O'Keefe** - [GitHub - nokeefe](https://github.com/nokeefe) | [LinkedIn](https://www.linkedin.com/in/nbokeefe/)
-* **Tywan Brooks** - [GitHub - tlvb25](https://github.com/tlvb25)
+* **Tywan Brooks** - [GitHub - tlvb25](https://github.com/tlvb25) | [LinkedIn](https://www.linkedin.com/in/tywan-brooks-a3b78716/)
