@@ -14,6 +14,9 @@ int (*getfun(char var))(va_list list)
 		{'s', print_string},
 		{'d', print_int},
 		{'u', print_unsigned},
+		{'o', *print_octal},
+		{'x', *print_hex},
+		{'X', *print_HEX},
 		{'\0', NULL}
 	};
 

@@ -18,7 +18,11 @@ typedef struct var
 	int (*f)(va_list list);
 } var_struct;
 
-
+char *convert(unsigned int num, int base, int flag);
+char *convert_add(unsigned long num, unsigned long base, int flag);
+int print_octal(va_list octal);
+int *print_hex(va_list hex);
+int *print_HEX(va_list HEX);
 int _putchar(char c);
 int print_number(int n);
 int print_perc(va_list list);
@@ -33,5 +37,7 @@ void print_all(const char * const format, ...);
 int _printf(const char *format, ...);
 int (*getfun(char var))(va_list list);
 char *rot13(char *s);
+int _strlen(char *s)
+
 
 #endif /* _HOLBERTON_H */
