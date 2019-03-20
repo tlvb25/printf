@@ -14,7 +14,7 @@
  */
 int print_fun(char strings)
 {
-	char char_array[] = {'c', 'i', 's', 'd', '%'};
+	char char_array[] = {'c', 'i', 's', 'd', '%', 'u', 'o', 'p'};
 	int a = 0;
 
 	if (strings == '%')
