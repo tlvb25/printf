@@ -41,40 +41,42 @@ int print_fun(char strings)
  */
 int _printf(const char *format, ...)
 {
-	int a = 0;
-	int increment = 0;
-	int whole_string = 0;
-	va_list list;
+	int i, increment, retlength;
+	va_list args;
 
-	va_start(list, format);
-	if (!format || (format[0] == '%' && !format[1]))
-	{
+	va_start(args, format);
+	i = 0;
+	increment = 0;
+	retlength = 0;
+	if (format == NULL)
 		return (-1);
-	}
-	while (format[a])
+	while (format[i])
 	{
-		if (format[a] == '%' && print_fun(format[a + 1]))
+		if (format[i] == '%' && !format[i + 1])
+			return (-1);
+		if (format[i] == '%' && print_fun(format[i + 1]))
 		{
-			a++;
-			if (print_fun(format[a]) == 1)
+			i++;
+			if (print_fun(format[i]) == 1)
 			{
-				whole_string += (*getfun(format[a]))(list);
-				a++;
+				increment += (*getfun(format[i]))(args);
+				i++;
 			}
 			else
 			{
-				_putchar(format[a]);
-				a++;
+				_putchar(format[i]);
+				i++;
 				increment++;
 			}
 		}
 		else
 		{
-			_putchar(format[a]);
-			a++, increment++;
+			_putchar(format[i]);
+			i++;
+			increment++;
 		}
 	}
-	increment += whole_string;
-	va_end(list);
+	increment += retlength;
+	va_end(args);
 	return (increment);
 }
