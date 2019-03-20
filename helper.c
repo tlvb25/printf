@@ -94,20 +94,3 @@ int print_number(int n)
 	}
 	return (sum);
 }
-
-
-/**
-* print_unsigned - prints unsigned numbers
-* @args: parameter argument
-*
-* Return: resulting digits
-*/
-int print_unsigned(va_list args)
-{
-	unsigned int num;
-	int results;
-
-	num = va_arg(args, unsigned int);
-	results = printNum(num);
-	return (results);
-}

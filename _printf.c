@@ -14,7 +14,7 @@
  */
 int print_fun(char strings)
 {
-	char char_array[] = {'c', 'i', 's', 'd'};
+	char char_array[] = {'c', 'i', 's', 'd', '%'};
 	int a = 0;
 
 	if (strings == '%')
@@ -44,11 +44,9 @@ int _printf(const char *format, ...)
 	int a = 0;
 	int increment = 0;
 	int whole_string = 0;
-
 	va_list list;
 
 	va_start(list, format);
-
 	if (!format || (format[0] == '%' && !format[1]))
 	{
 		return (-1);
@@ -58,13 +56,11 @@ int _printf(const char *format, ...)
 		if (format[a] == '%' && print_fun(format[a + 1]))
 		{
 			a++;
-
 			if (print_fun(format[a]) == 1)
 			{
 				whole_string += (*getfun(format[a]))(list);
 				a++;
 			}
-
 			else
 			{
 				_putchar(format[a]);
@@ -72,15 +68,12 @@ int _printf(const char *format, ...)
 				increment++;
 			}
 		}
-
 		else
 		{
 			_putchar(format[a]);
-			a++;
-			increment++;
+			a++, increment++;
 		}
 	}
-
 	increment += whole_string;
 	va_end(list);
 	return (increment);
