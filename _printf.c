@@ -19,10 +19,10 @@ int print_fun(char strings)
 
 	if (strings == '%')
 	{
-		return (1);
+		return (2);
 	}
 
-	while (a < 4)
+	while (a < 8)
 	{
 		if (strings == char_array[a])
 		{
