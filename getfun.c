@@ -14,7 +14,7 @@ int (*getfun(char var))(va_list list)
 		{'d', print_int},
 		{'u', print_unsigned},
 	    {'R', print_rot},
-		{'p', print_address},
+		{'p', print_addr},
 		{'o', print_octal},
 		{'b', print_b},
 		{'\0', NULL}

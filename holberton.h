@@ -21,7 +21,7 @@ typedef struct var
 
 int print_b(va_list ap);
 int print_octal(va_list ap);
-int print_address(va_list args);
+int print_addr(va_list args);
 int print_rot(va_list list);
 int _putchar(char c);
 int print_number(int n);
