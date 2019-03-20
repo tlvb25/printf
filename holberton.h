@@ -38,5 +38,6 @@ int _printf(const char *format, ...);
 int (*getfun(char var))(va_list list);
 char *rot13(char *s);
 char *print_conv(unsigned long int num, int base, int cap);
+char *convert(unsigned int num, int base);
 
 #endif /* _HOLBERTON_H */
