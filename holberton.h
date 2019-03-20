@@ -37,7 +37,6 @@ void print_all(const char * const format, ...);
 int _printf(const char *format, ...);
 int (*getfun(char var))(va_list list);
 char *rot13(char *s);
-int _strlen(char *s)
 
 
 #endif /* _HOLBERTON_H */
