@@ -18,11 +18,11 @@ typedef struct var
 	int (*f)(va_list list);
 } var_struct;
 
-char *convert(unsigned int num, int base, int flag);
-char *convert_add(unsigned long num, unsigned long base, int flag);
-int print_octal(va_list octal);
-int *print_hex(va_list hex);
-int *print_HEX(va_list HEX);
+
+int print_b(va_list ap);
+int print_octal(va_list ap);
+int print_address(va_list args);
+int print_rot(va_list list);
 int _putchar(char c);
 int print_number(int n);
 int print_perc(va_list list);

@@ -1,73 +1,28 @@
 #include "holberton.h"
 
-/** These Helper Functions were provided to me by classmate Bill Huang *
-
-
-
 
 /**
- * convert - a function that converts int to string upon the base
- * @num: number to be converted
- * @base: converting to upon the base
- * @flag: 0 for lowercase, 1 for uppercase
+ * convert - function that converts our int to hex, octal, or binary
+ * @num: the number passed into the function
+ * @base: the base to convert to
  *
- * Return: return pointer to string
+ * Return: the convertednumber of a certain base
  */
-char *convert(unsigned int num, int base, int flag)
+
+char *convert(unsigned int num, int base)
 {
-	static char *array;
+	const char array[] = "0123456789ABCDEF";
 	static char buffer[50];
 	char *ptr;
 
-	array = (flag == 1) ? ("0123456789ABCDEF") : ("0123456789abcdef");
 	ptr = &buffer[49];
 	*ptr = '\0';
-	do {
+
+	while (num != 0)
+	{
 		*--ptr = array[num % base];
 		num /= base;
-	} while (num != 0);
+	}
+
 	return (ptr);
-}
-
-
-/**
- * convert_add - a function that converts int to string upon the base
- * @num: number to be converted
- * @base: converting to upon the base
- * @flag: 0 for lowercase, 1 for uppercase
- *
- * Return: return pointer to string
- */
-char *convert_add(unsigned long num, unsigned long base, int flag)
-{
-	static char *array;
-	static char buffer[50];
-	char *ptr;
-
-	array = (flag == 1) ? ("0123456789ABCDEF") : ("0123456789abcdef");
-	ptr = &buffer[49];
-	*ptr = '\0';
-	do {
-		*--ptr = array[num % base];
-		num /= base;
-	} while (num != 0);
-	*--ptr = 'x';
-	*--ptr = '0';
-	return (ptr);
-}
-
-
-/**
- * _strlen - a function that returns the length of string
- *@s: a pointer of string
- *
- * Return: the length of string
- */
-int _strlen(char *s)
-{
-	int i;
-
-	for (i = 0; *s; i++)
-		s++;
-	return (i);
 }
