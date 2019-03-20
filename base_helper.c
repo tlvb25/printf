@@ -124,3 +124,4 @@ int print_b(va_list ap)
 		increment += _putchar(str[i]);
 	}
 	return (increment);
+}
