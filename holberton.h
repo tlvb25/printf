@@ -16,6 +16,7 @@ typedef struct var
 {
 	char var;
 	int (*f)(va_list list);
+	char *(*fn)();
 } var_struct;
 
 
